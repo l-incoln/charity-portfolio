@@ -1,7 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
@@ -51,6 +51,6 @@ async function middleware(request: NextRequest) {
   return supabaseResponse
 }
 
-const config = {
+export const config = {
   matcher: ['/admin/:path*'],
 }

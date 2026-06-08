@@ -47,11 +47,10 @@ const skillSchema = z.object({
 export async function createSkill(formData: FormData) {
   const supabase = await createClient()
   const parsed = skillSchema.safeParse(Object.fromEntries(formData))
-  if (!parsed.success) return { error: 'Invalid data' }
+  if (!parsed.success) return
   const { error } = await supabase.from('skills').insert(parsed.data)
-  if (error) return { error: error.message }
+  if (error) return
   revalidatePath('/'); revalidatePath('/admin/skills')
-  return { success: true }
 }
 
 export async function updateSkill(id: string, formData: FormData) {
@@ -183,11 +182,10 @@ const certSchema = z.object({
 export async function createCertification(formData: FormData) {
   const supabase = await createClient()
   const parsed = certSchema.safeParse(Object.fromEntries(formData))
-  if (!parsed.success) return { error: 'Invalid data' }
+  if (!parsed.success) return
   const { error } = await supabase.from('certifications').insert(parsed.data)
-  if (error) return { error: error.message }
+  if (error) return
   revalidatePath('/'); revalidatePath('/admin/certifications')
-  return { success: true }
 }
 
 export async function updateCertification(id: string, formData: FormData) {

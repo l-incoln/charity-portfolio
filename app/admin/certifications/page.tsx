@@ -14,7 +14,7 @@ async function getCerts() {
 
 async function handleCreateCertification(formData: FormData): Promise<void> {
   'use server'
-  await createCertification(formData)
+  createCertification(formData)
 }
 
 export default async function CertificationsPage() {

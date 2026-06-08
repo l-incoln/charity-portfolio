@@ -44,7 +44,8 @@ export default function Projects({ projects }: ProjectsProps) {
           className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Work</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
             Real-world data science projects delivering measurable business impact.

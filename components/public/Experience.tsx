@@ -49,7 +49,8 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
           className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Journey</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Experience &amp; <span className="gradient-text">Education</span>
           </h2>
         </motion.div>
 

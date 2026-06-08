@@ -59,7 +59,8 @@ export default function Skills({ skills }: SkillsProps) {
           className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">What I Do</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            My <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>
 

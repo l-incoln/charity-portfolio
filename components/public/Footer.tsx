@@ -16,11 +16,11 @@ const quickLinks = [
 export default function Footer({ profile }: FooterProps) {
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-6xl mx-auto px-6 py-10 md:py-12">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h3 className="text-xl font-bold text-white mb-3">
               Charity <span className="gradient-text">Agutu</span>
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-5">

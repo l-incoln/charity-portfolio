@@ -99,7 +99,7 @@ export default function Hero({ profile }: HeroProps) {
           Available for opportunities
         </motion.div>
 
-        {/* Main grid: floating pills + photo + pills */}
+        {/* Main grid: floating pills + [photo | name] + pills */}
         <div className="w-full flex items-center justify-center lg:justify-between gap-6 mb-8">
           {/* Left floating cards */}
           <div className="hidden lg:flex flex-col gap-3 items-end flex-1">
@@ -109,22 +109,46 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 + i * 0.15 }}
-                className="glass px-5 py-2.5 rounded-xl text-sm font-semibold text-cyan-300 border border-cyan-500/20 glow"
+                className="glass px-4 py-2 rounded-xl text-sm font-semibold text-cyan-300 border border-cyan-500/20"
               >
                 {item}
               </motion.div>
             ))}
           </div>
 
-          {/* Center: photo + name */}
-          <div className="flex flex-col items-center gap-6 flex-shrink-0">
+          {/* Center: photo + name side-by-side on md+, stacked on mobile */}
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 flex-shrink-0">
+            {/* Profile photo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 flex-shrink-0"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 via-blue-600 to-cyan-300 opacity-25 blur-xl animate-pulse" />
+              <div className="relative w-full h-full rounded-full border-2 border-cyan-500/40 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center glow">
+                {profile?.profile_image_url ? (
+                  <img
+                    src={profile.profile_image_url}
+                    alt="Charity Agutu Martha"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-5xl font-bold gradient-text" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    CA
+                  </div>
+                )}
+              </div>
+              <div className="absolute inset-[-10px] rounded-full border border-cyan-500/20 animate-spin" style={{ animationDuration: '20s' }} />
+            </motion.div>
+
             {/* Name & title */}
-            <div>
+            <div className="text-center md:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-5xl sm:text-6xl md:text-8xl font-bold leading-tight mb-4"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
                 <span className="text-white">Charity</span>{' '}
@@ -137,37 +161,12 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="text-lg sm:text-2xl md:text-3xl text-slate-300 font-medium mt-2"
+                className="text-base sm:text-lg md:text-xl text-slate-300 font-medium"
               >
                 Data Scientist &amp;{' '}
-                <span className="text-cyan-400">Machine Learning Practitioner</span>
+                <span className="text-cyan-400">ML Practitioner</span>
               </motion.p>
             </div>
-
-            {/* Profile photo circle */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-64 md:h-64"
-            >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 via-blue-600 to-cyan-300 opacity-30 blur-xl animate-pulse" />
-              <div className="relative w-full h-full rounded-full border-2 border-cyan-500/40 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center glow">
-                {profile?.profile_image_url ? (
-                  <img
-                    src={profile.profile_image_url}
-                    alt="Charity Agutu Martha"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-6xl font-bold gradient-text" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    CA
-                  </div>
-                )}
-              </div>
-              {/* Orbital ring */}
-              <div className="absolute inset-[-12px] rounded-full border border-cyan-500/20 animate-spin" style={{ animationDuration: '20s' }} />
-            </motion.div>
           </div>
 
           {/* Right floating cards */}
@@ -178,7 +177,7 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 + i * 0.15 }}
-                className="glass px-5 py-2.5 rounded-xl text-sm font-semibold text-cyan-300 border border-cyan-500/20 glow"
+                className="glass px-4 py-2 rounded-xl text-sm font-semibold text-cyan-300 border border-cyan-500/20"
               >
                 {item}
               </motion.div>
@@ -201,27 +200,27 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-wrap gap-5 justify-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:justify-center"
         >
           <a
             href={resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-105"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-105"
           >
             <Download size={16} />
             Download CV
           </a>
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center gap-2 glass border border-cyan-500/30 text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:scale-105"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 glass border border-cyan-500/40 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:scale-105"
           >
             View Projects
             <ArrowRight size={16} />
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="flex items-center gap-2 glass border border-slate-600 text-slate-300 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:border-white hover:text-white hover:scale-105"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 glass border border-slate-600/80 text-slate-300 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:border-slate-400 hover:text-white hover:scale-105"
           >
             <Mail size={16} />
             Contact Me

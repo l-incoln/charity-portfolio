@@ -50,8 +50,10 @@ export default function Navigation() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className={cn(
-          'fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden md:flex items-center gap-1 px-6 py-3 rounded-full transition-all duration-300',
-          scrolled ? 'glass shadow-lg shadow-cyan-500/10' : 'glass'
+          'fixed top-5 left-1/2 -translate-x-1/2 z-50 hidden md:flex items-center gap-1 px-4 py-2.5 rounded-full transition-all duration-300 border',
+          scrolled
+            ? 'glass border-slate-700/60 shadow-xl shadow-black/20'
+            : 'glass border-slate-700/30'
         )}
       >
         {navLinks.map((link) => (
@@ -59,10 +61,10 @@ export default function Navigation() {
             key={link.href}
             onClick={() => scrollTo(link.href)}
             className={cn(
-              'relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300',
+              'relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 whitespace-nowrap',
               activeSection === link.href.slice(1)
                 ? 'text-white'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-400 hover:text-slate-200'
             )}
           >
             {activeSection === link.href.slice(1) && (

@@ -30,7 +30,8 @@ export default function About({ profile }: AboutProps) {
           className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Who I Am</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            About <span className="gradient-text">Me</span>
           </h2>
         </motion.div>
 
@@ -66,7 +67,7 @@ export default function About({ profile }: AboutProps) {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="glass rounded-2xl p-6 md:p-8 border border-cyan-500/15 space-y-5"
           >
-              <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h3 className="text-xl font-bold text-white mb-4">
               Quick Facts
             </h3>
 

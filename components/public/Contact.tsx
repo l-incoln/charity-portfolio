@@ -59,7 +59,8 @@ export default function Contact({ profile }: ContactProps) {
           className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Get In Touch</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Let&apos;s Work <span className="gradient-text">Together</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
             I&apos;m open to data science roles, freelance projects, and collaborations. Let&apos;s turn your data into decisions.
@@ -72,7 +73,7 @@ export default function Contact({ profile }: ContactProps) {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-3"
           >
             {[
               { icon: Mail, label: 'Email', value: profile?.email || 'charityagutu@gmail.com', href: `mailto:${profile?.email}` },
@@ -108,7 +109,7 @@ export default function Contact({ profile }: ContactProps) {
             {sent ? (
               <div className="glass rounded-2xl p-6 md:p-8 border border-green-500/30 text-center">
                 <CheckCircle2 size={48} className="text-green-400 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Message Sent!</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
                 <p className="text-slate-400">Thank you for reaching out. I&apos;ll get back to you soon.</p>
                 <button onClick={() => setSent(false)} className="mt-6 text-cyan-400 text-sm hover:underline">Send another</button>
               </div>

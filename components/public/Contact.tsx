@@ -56,24 +56,23 @@ export default function Contact({ profile }: ContactProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Get In Touch</p>
-          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Let&apos;s Work <span className="gradient-text">Together</span>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
             I&apos;m open to data science roles, freelance projects, and collaborations. Let&apos;s turn your data into decisions.
           </p>
         </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left: Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-4"
           >
             {[
               { icon: Mail, label: 'Email', value: profile?.email || 'charityagutu@gmail.com', href: `mailto:${profile?.email}` },
@@ -107,14 +106,14 @@ export default function Contact({ profile }: ContactProps) {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             {sent ? (
-              <div className="glass rounded-2xl p-10 border border-green-500/30 text-center">
+              <div className="glass rounded-2xl p-6 md:p-8 border border-green-500/30 text-center">
                 <CheckCircle2 size={48} className="text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Message Sent!</h3>
                 <p className="text-slate-400">Thank you for reaching out. I&apos;ll get back to you soon.</p>
                 <button onClick={() => setSent(false)} className="mt-6 text-cyan-400 text-sm hover:underline">Send another</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="glass rounded-2xl p-10 border border-slate-700/50 space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="glass rounded-2xl p-6 md:p-8 border border-slate-700/50 space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs text-slate-400 uppercase tracking-wide mb-2">Name *</label>

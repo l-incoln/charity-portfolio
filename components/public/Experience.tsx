@@ -46,11 +46,10 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-10"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Journey</p>
-          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Experience &amp; <span className="gradient-text">Education</span>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
           </h2>
         </motion.div>
 
@@ -58,7 +57,7 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
           {/* Timeline line */}
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-cyan-500/20 to-transparent" />
 
-          <div className="space-y-12">
+          <div className="space-y-10">
             {items.sort((a, b) => a.display_order - b.display_order).map((item, i) => (
               <motion.div
                 key={item.id}

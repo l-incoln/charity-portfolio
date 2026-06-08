@@ -49,16 +49,23 @@ p {
 }
 
 .section-padding {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }

@@ -35,7 +35,7 @@ export default function About({ profile }: AboutProps) {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">>
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left: Bio */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}

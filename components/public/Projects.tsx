@@ -120,7 +120,7 @@ export default function Projects({ projects }: ProjectsProps) {
                       rel="noreferrer"
                       className="flex items-center gap-2 glass border border-slate-600 text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-sm transition-all duration-300 hover:border-white"
                     >
-                      <Github size={14} />
+                      <GitBranch size={14} />
                       Code
                     </a>
                   )}

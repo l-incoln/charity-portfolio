@@ -21,6 +21,11 @@ const categories: { value: SkillCategory; label: string }[] = [
   { value: 'other', label: 'Other' },
 ]
 
+async function handleCreateSkill(formData: FormData): Promise<void> {
+  'use server'
+  await createSkill(formData)
+}
+
 export default async function SkillsPage() {
   const skills = await getSkills()
 
@@ -34,7 +39,7 @@ export default async function SkillsPage() {
       {/* Add form */}
       <div className="glass rounded-2xl p-6 border border-slate-700/50 mb-8">
         <h2 className="text-base font-bold text-white mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>Add Skill</h2>
-        <form action={createSkill} className="flex flex-wrap gap-4 items-end">
+        <form action={handleCreateSkill} className="flex flex-wrap gap-4 items-end">
           <div className="flex-1 min-w-36">
             <label className="block text-xs text-slate-400 uppercase tracking-wide mb-2">Skill Name *</label>
             <input name="name" required placeholder="Python" className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors" />

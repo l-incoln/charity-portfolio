@@ -12,6 +12,11 @@ async function getCerts() {
   } catch { return [] }
 }
 
+async function handleCreateCertification(formData: FormData): Promise<void> {
+  'use server'
+  await createCertification(formData)
+}
+
 export default async function CertificationsPage() {
   const certs = await getCerts()
 
@@ -25,7 +30,7 @@ export default async function CertificationsPage() {
       {/* Add form */}
       <div className="glass rounded-2xl p-6 border border-slate-700/50 mb-8">
         <h2 className="text-base font-bold text-white mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>Add Certification</h2>
-        <form action={createCertification} className="space-y-4">
+        <form action={handleCreateCertification} className="space-y-4">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs text-slate-400 uppercase tracking-wide mb-2">Name *</label>

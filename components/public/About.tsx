@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { MapPin, Mail, GitBranch, Linkedin, Target, Zap } from 'lucide-react'
+import { MapPin, Mail, GitBranch, Link2, Target, Zap } from 'lucide-react'
 import type { Profile } from '@/lib/types'
 
 interface AboutProps {
@@ -75,7 +75,7 @@ export default function About({ profile }: AboutProps) {
               { icon: MapPin, label: 'Location', value: profile?.location || 'Nairobi, Kenya' },
               { icon: Mail, label: 'Email', value: profile?.email || 'charityagutu@gmail.com', href: `mailto:${profile?.email}` },
               { icon: GitBranch, label: 'GitHub', value: 'charityagutu', href: profile?.github_url || '#' },
-              { icon: Linkedin, label: 'LinkedIn', value: 'charityagutu', href: profile?.linkedin_url || '#' },
+              { icon: Link2, label: 'LinkedIn', value: 'charityagutu', href: profile?.linkedin_url || '#' },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-4 pb-4 border-b border-slate-700/50 last:border-0 last:pb-0">
                 <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">

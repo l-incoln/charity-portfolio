@@ -1,4 +1,4 @@
-import { GitBranch, Linkedin, Mail, Download, Heart } from 'lucide-react'
+import { GitBranch, Link2, Mail, Download, Heart } from 'lucide-react'
 import type { Profile } from '@/lib/types'
 
 interface FooterProps {
@@ -69,7 +69,7 @@ export default function Footer({ profile }: FooterProps) {
               {profile?.linkedin_url && (
                 <a href={profile.linkedin_url} target="_blank" rel="noreferrer"
                   className="w-10 h-10 glass rounded-xl border border-slate-700 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300">
-                  <Linkedin size={16} />
+                  <Link2 size={16} />
                 </a>
               )}
               {profile?.email && (

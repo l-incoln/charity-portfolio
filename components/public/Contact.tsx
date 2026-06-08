@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Mail, Linkedin, GitBranch, MapPin, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, Link2, GitBranch, MapPin, Send, CheckCircle2 } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -77,7 +77,7 @@ export default function Contact({ profile }: ContactProps) {
           >
             {[
               { icon: Mail, label: 'Email', value: profile?.email || 'charityagutu@gmail.com', href: `mailto:${profile?.email}` },
-              { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/charityagutu', href: profile?.linkedin_url || '#' },
+              { icon: Link2, label: 'LinkedIn', value: 'linkedin.com/in/charityagutu', href: profile?.linkedin_url || '#' },
               { icon: GitBranch, label: 'GitHub', value: 'github.com/charityagutu', href: profile?.github_url || '#' },
               { icon: MapPin, label: 'Location', value: profile?.location || 'Nairobi, Kenya', href: '' },
             ].map((item) => (

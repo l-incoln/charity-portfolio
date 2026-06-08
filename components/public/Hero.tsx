@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Download, ArrowRight, Github, Linkedin, Mail } from 'lucide-react'
+import { Download, ArrowRight, GitBranch, Linkedin, Mail } from 'lucide-react'
 import type { Profile } from '@/lib/types'
 
 interface HeroProps {
@@ -238,7 +238,7 @@ export default function Hero({ profile }: HeroProps) {
           {profile?.github_url && (
             <a href={profile.github_url} target="_blank" rel="noreferrer"
               className="glass p-3 rounded-full text-slate-400 hover:text-cyan-400 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110">
-              <Github size={18} />
+              <GitBranch size={18} />
             </a>
           )}
           {profile?.linkedin_url && (

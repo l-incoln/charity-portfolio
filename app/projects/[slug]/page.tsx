@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Github, ExternalLink, Tag } from 'lucide-react'
+import { ArrowLeft, GitBranch, ExternalLink, Tag } from 'lucide-react'
 import type { Project } from '@/lib/types'
 
 interface Props {
@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: Props) {
               {project.github_url && (
                 <a href={project.github_url} target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 glass border border-slate-600 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 px-5 py-2.5 rounded-full text-sm transition-all duration-300">
-                  <Github size={14} /> View Code
+                  <GitBranch size={14} /> View Code
                 </a>
               )}
               {project.live_url && (

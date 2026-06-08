@@ -25,15 +25,15 @@ export default function Certifications({ certifications }: CertificationsProps) 
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Credentials</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="section-label">Credentials</span>
+          <h2 className="text-4xl md:text-5xl">
             <span className="gradient-text">Certifications</span>
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((cert, i) => (
             <motion.div
               key={cert.id}
@@ -41,7 +41,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.03, y: -4 }}
-              className="glass rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300 group"
+              className="rounded-2xl p-6 border border-slate-700/50 bg-slate-900/50 hover:border-cyan-500/40 transition-all duration-300 group"
             >
               {/* Badge image or icon */}
               <div className="mb-4 relative">

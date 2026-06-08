@@ -87,13 +87,13 @@ export default function Hero({ profile }: HeroProps) {
       {/* Radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(6,182,212,0.08),transparent)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-14 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 flex flex-col items-center text-center">
         {/* Availability badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-2 glass px-5 py-2.5 rounded-full text-xs font-medium text-cyan-400 mb-8 border border-cyan-500/20"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold text-emerald-400 border border-emerald-500/30 bg-emerald-500/10 mb-10"
         >
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           Available for opportunities
@@ -123,7 +123,7 @@ export default function Hero({ profile }: HeroProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 flex-shrink-0"
+              className="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 flex-shrink-0"
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 via-blue-600 to-cyan-300 opacity-25 blur-xl animate-pulse" />
               <div className="relative w-full h-full rounded-full border-2 border-cyan-500/40 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center glow">
@@ -148,7 +148,7 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-3"
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-3 tracking-tight"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
                 <span className="text-white">Charity</span>{' '}
@@ -161,7 +161,7 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="text-base sm:text-lg md:text-xl text-slate-300 font-medium"
+                className="text-lg sm:text-xl lg:text-2xl text-slate-300 font-medium mt-1"
               >
                 Data Scientist &amp;{' '}
                 <span className="text-cyan-400">ML Practitioner</span>
@@ -190,7 +190,7 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="max-w-2xl text-slate-400 text-base sm:text-lg leading-relaxed mb-8"
+          className="max-w-xl text-slate-400 text-base sm:text-lg leading-relaxed mb-10"
         >
           {profile?.tagline || 'Transforming complex datasets into actionable insights through machine learning, predictive analytics, and business intelligence.'}
         </motion.p>
@@ -200,27 +200,27 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:justify-center"
+          className="flex flex-col sm:flex-row gap-3 items-center justify-center"
         >
           <a
             href={resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-[0_0_24px_rgba(6,182,212,0.5)] hover:scale-105 text-sm"
           >
             <Download size={16} />
             Download CV
           </a>
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 glass border border-cyan-500/40 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:border-cyan-400 hover:text-cyan-400 hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-cyan-500/50 text-cyan-400 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-cyan-500/10 hover:border-cyan-400 hover:scale-105 text-sm"
           >
             View Projects
             <ArrowRight size={16} />
           </button>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 glass border border-slate-600/80 text-slate-300 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:border-slate-400 hover:text-white hover:scale-105"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-slate-600 text-slate-400 font-semibold px-8 py-3.5 rounded-full transition-all duration-300 hover:border-slate-400 hover:text-slate-200 hover:scale-105 text-sm"
           >
             <Mail size={16} />
             Contact Me
@@ -232,24 +232,22 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="flex gap-4 mt-6"
+          className="flex items-center gap-3 mt-10"
         >
           {profile?.github_url && (
             <a href={profile.github_url} target="_blank" rel="noreferrer"
-              className="glass p-3 rounded-full text-slate-400 hover:text-cyan-400 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110">
+              className="w-10 h-10 glass-light rounded-xl border border-slate-700/70 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/60 transition-all duration-300 hover:scale-110">
               <GitBranch size={18} />
             </a>
           )}
           {profile?.linkedin_url && (
             <a href={profile.linkedin_url} target="_blank" rel="noreferrer"
-              className="glass p-3 rounded-full text-slate-400 hover:text-cyan-400 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110">
-              <Link2 size={18} />
+              className="w-10 h-10 glass-light rounded-xl border border-slate-700/70 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/60 transition-all duration-300 hover:scale-110">
             </a>
           )}
           {profile?.email && (
             <a href={`mailto:${profile.email}`}
-              className="glass p-3 rounded-full text-slate-400 hover:text-cyan-400 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110">
-              <Mail size={18} />
+              className="w-10 h-10 glass-light rounded-xl border border-slate-700/70 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/60 transition-all duration-300 hover:scale-110">
             </a>
           )}
         </motion.div>

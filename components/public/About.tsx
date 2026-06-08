@@ -27,34 +27,35 @@ export default function About({ profile }: AboutProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Who I Am</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="section-label">Who I Am</span>
+          <h2 className="text-4xl md:text-5xl">
             About <span className="gradient-text">Me</span>
           </h2>
+          <p className="text-slate-400 mt-4 max-w-lg mx-auto text-base">Passionate about transforming data into strategic business value.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-start">
           {/* Left: Bio */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-5"
+            className="space-y-6"
           >
-            <p className="text-slate-300 text-lg leading-relaxed">
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed">
               {profile?.bio || 'I am a passionate Data Scientist and Machine Learning Practitioner with expertise in transforming raw data into strategic business value. Currently completing my Data Science Bootcamp at Moringa School, I specialize in predictive analytics, healthcare data, and business intelligence dashboards.'}
             </p>
-            <p className="text-slate-400 leading-relaxed">
+            <p className="text-slate-400 text-base leading-relaxed">
               I am driven by the belief that data-driven decisions lead to meaningful impact. Every dataset tells a story — my job is to find it, understand it, and communicate it effectively to stakeholders.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-2 pt-2">
               {specializations.map((spec) => (
-                <div key={spec.label} className="flex items-center gap-2 glass px-4 py-2 rounded-full border border-slate-700 text-sm">
-                  <spec.icon size={14} className={spec.color} />
-                  <span className="text-slate-300">{spec.label}</span>
+                <div key={spec.label} className="flex items-center gap-2 bg-slate-800/70 border border-slate-700/60 px-4 py-2 rounded-xl text-sm hover:border-cyan-500/40 transition-colors">
+                  <spec.icon size={13} className={spec.color} />
+                  <span className="text-slate-300 font-medium">{spec.label}</span>
                 </div>
               ))}
             </div>
@@ -65,7 +66,7 @@ export default function About({ profile }: AboutProps) {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="glass rounded-2xl p-6 md:p-8 border border-cyan-500/15 space-y-5"
+            className="rounded-2xl p-6 md:p-8 border border-slate-700/50 bg-slate-900/60 space-y-5"
           >
               <h3 className="text-xl font-bold text-white mb-4">
               Quick Facts

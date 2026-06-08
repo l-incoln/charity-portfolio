@@ -41,34 +41,34 @@ export default function Projects({ projects }: ProjectsProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Work</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="section-label">My Work</span>
+          <h2 className="text-4xl md:text-5xl">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-slate-400 mt-4 max-w-xl mx-auto">
+          <p className="text-slate-400 mt-4 max-w-xl mx-auto text-base">
             Real-world data science projects delivering measurable business impact.
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-7">
           {featured.map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className={`glass rounded-2xl border border-slate-700/50 hover:border-cyan-500/30 overflow-hidden transition-all duration-300 group flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+              className={`rounded-2xl border border-slate-700/50 hover:border-cyan-500/40 overflow-hidden transition-all duration-300 group bg-slate-900/50 flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
             >
               {/* Image */}
-              <div className="md:w-2/5 relative overflow-hidden min-h-[240px] bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+              <div className="md:w-2/5 relative overflow-hidden min-h-[220px] md:min-h-[300px] bg-gradient-to-br from-slate-800/80 to-slate-900 flex items-center justify-center">
                 {project.image_url ? (
                   <img src={project.image_url} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ) : (
                   <div className="text-center p-8">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-cyan-400" style={{ fontFamily: 'Sora, sans-serif' }}>
+                      <span className="text-2xl font-bold text-cyan-400">
                         {project.title.charAt(0)}
                       </span>
                     </div>
@@ -82,23 +82,23 @@ export default function Projects({ projects }: ProjectsProps) {
               </div>
 
               {/* Content */}
-              <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+              <div className="md:w-3/5 p-6 lg:p-9 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3">
                     {project.title}
                   </h3>
                   <p className="text-slate-400 leading-relaxed mb-4">{project.description}</p>
 
                   {project.results && (
-                    <div className="glass rounded-xl p-4 border border-green-500/20 mb-5">
-                      <p className="text-xs text-green-400 uppercase tracking-wide font-semibold mb-1">Results</p>
+                    <div className="rounded-xl p-4 border border-emerald-500/20 bg-emerald-500/5 mb-5">
+                      <p className="text-xs text-emerald-400 uppercase tracking-wide font-bold mb-1">Impact &amp; Results</p>
                       <p className="text-slate-300 text-sm">{project.results}</p>
                     </div>
                   )}
 
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-7">
                     {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 font-medium">
+                      <span key={tech} className="text-xs px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/70 text-slate-300 font-semibold">
                         {tech}
                       </span>
                     ))}
@@ -108,7 +108,7 @@ export default function Projects({ projects }: ProjectsProps) {
                 <div className="flex gap-3">
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-5 py-2.5 rounded-full text-sm transition-all duration-300 hover:scale-105"
+                    className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold px-5 py-2.5 rounded-full text-sm transition-all duration-300 hover:shadow-[0_0_16px_rgba(6,182,212,0.4)] hover:scale-105"
                   >
                     View Case Study
                     <ArrowRight size={14} />
@@ -129,7 +129,7 @@ export default function Projects({ projects }: ProjectsProps) {
                       href={project.live_url}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 glass border border-slate-600 text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-sm transition-all duration-300 hover:border-white"
+                      className="inline-flex items-center gap-2 border border-slate-600/80 text-slate-400 hover:text-white hover:border-slate-400 px-5 py-2.5 rounded-full text-sm transition-all duration-300"
                     >
                       <ExternalLink size={14} />
                       Live

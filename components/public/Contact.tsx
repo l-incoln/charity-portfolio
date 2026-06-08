@@ -56,13 +56,13 @@ export default function Contact({ profile }: ContactProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Get In Touch</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="section-label">Get In Touch</span>
+          <h2 className="text-4xl md:text-5xl">
             Let&apos;s Work <span className="gradient-text">Together</span>
           </h2>
-          <p className="text-slate-400 mt-4 max-w-xl mx-auto">
+          <p className="text-slate-400 mt-4 max-w-xl mx-auto text-base">
             I&apos;m open to data science roles, freelance projects, and collaborations. Let&apos;s turn your data into decisions.
           </p>
         </motion.div>
@@ -73,15 +73,14 @@ export default function Contact({ profile }: ContactProps) {
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-3"
-          >
+            className="space-y-3"          >
             {[
               { icon: Mail, label: 'Email', value: profile?.email || 'charityagutu@gmail.com', href: `mailto:${profile?.email}` },
               { icon: Link2, label: 'LinkedIn', value: 'linkedin.com/in/charityagutu', href: profile?.linkedin_url || '#' },
               { icon: GitBranch, label: 'GitHub', value: 'github.com/charityagutu', href: profile?.github_url || '#' },
               { icon: MapPin, label: 'Location', value: profile?.location || 'Nairobi, Kenya', href: '' },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-4 glass rounded-xl p-5 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300 group">
+              <div key={item.label} className="flex items-center gap-4 rounded-xl p-4 border border-slate-700/50 bg-slate-900/50 hover:border-cyan-500/30 transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <item.icon size={18} className="text-cyan-400" />
                 </div>
@@ -114,14 +113,14 @@ export default function Contact({ profile }: ContactProps) {
                 <button onClick={() => setSent(false)} className="mt-6 text-cyan-400 text-sm hover:underline">Send another</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="glass rounded-2xl p-6 md:p-8 border border-slate-700/50 space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl p-6 lg:p-8 border border-slate-700/50 bg-slate-900/50 space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs text-slate-400 uppercase tracking-wide mb-2">Name *</label>
                     <input
                       {...register('name')}
                       placeholder="Charity"
-                      className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors"
+                      className="w-full bg-slate-800/60 border border-slate-700/70 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 transition-colors"
                     />
                     {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
                   </div>
@@ -131,7 +130,7 @@ export default function Contact({ profile }: ContactProps) {
                       {...register('email')}
                       type="email"
                       placeholder="you@company.com"
-                      className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors"
+                      className="w-full bg-slate-800/60 border border-slate-700/70 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 transition-colors"
                     />
                     {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
                   </div>
@@ -142,7 +141,7 @@ export default function Contact({ profile }: ContactProps) {
                   <input
                     {...register('subject')}
                     placeholder="Job opportunity / Collaboration..."
-                    className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors"
+                    className="w-full bg-slate-800/60 border border-slate-700/70 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 transition-colors"
                   />
                 </div>
 
@@ -152,7 +151,7 @@ export default function Contact({ profile }: ContactProps) {
                     {...register('message')}
                     rows={5}
                     placeholder="Tell me about your project or opportunity..."
-                    className="w-full bg-slate-800/50 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                    className="w-full bg-slate-800/60 border border-slate-700/70 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 transition-colors resize-none"
                   />
                   {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message.message}</p>}
                 </div>
@@ -160,7 +159,7 @@ export default function Contact({ profile }: ContactProps) {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 disabled:opacity-60 text-slate-900 font-semibold py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 disabled:opacity-60 text-slate-900 font-bold py-3.5 rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
                 >
                   {submitting ? 'Sending...' : <>Send Message <Send size={16} /></>}
                 </button>

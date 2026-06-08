@@ -56,15 +56,15 @@ export default function Skills({ skills }: SkillsProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">What I Do</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="section-label">What I Do</span>
+          <h2 className="text-4xl md:text-5xl">
             My <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {categories.map((cat, i) => {
             const config = categoryConfig[cat]
             const Icon = config.icon
@@ -75,19 +75,19 @@ export default function Skills({ skills }: SkillsProps) {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 whileHover={{ scale: 1.03, y: -4 }}
-                className="glass rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300 group"
+                className="rounded-2xl p-6 border border-slate-700/50 bg-slate-900/50 hover:border-cyan-500/40 hover:bg-slate-900/80 transition-all duration-300 group"
               >
                 <div className={`w-12 h-12 rounded-xl ${config.bg} border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon size={22} className={config.color} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <h3 className="text-base font-bold text-white mb-4">
                   {config.label}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {grouped[cat].sort((a, b) => a.display_order - b.display_order).map((skill) => (
                     <span
                       key={skill.id}
-                      className={`text-xs px-3 py-1.5 rounded-full ${config.bg} border ${config.color} font-medium`}
+                      className={`text-xs px-3 py-1 rounded-lg ${config.bg} border ${config.color} font-semibold`}
                     >
                       {skill.name}
                     </span>
@@ -104,7 +104,7 @@ export default function Skills({ skills }: SkillsProps) {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <p className="text-center text-slate-400 text-sm uppercase tracking-widest mb-6">Tech Stack</p>
+          <p className="text-center text-slate-500 text-xs uppercase tracking-widest mb-5 font-semibold">All Technologies</p>
           <div className="flex flex-wrap justify-center gap-3">
             {displaySkills.map((skill, i) => (
               <motion.span
@@ -113,7 +113,7 @@ export default function Skills({ skills }: SkillsProps) {
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 0.6 + i * 0.04 }}
                 whileHover={{ scale: 1.1, y: -3 }}
-                className="glass px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-slate-700 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-200 cursor-default"
+                className="px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 border border-slate-700/70 bg-slate-900/40 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-200 cursor-default"
               >
                 {skill.name}
               </motion.span>

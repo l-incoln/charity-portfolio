@@ -41,45 +41,45 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
       {/* Dark background */}
       <div className="absolute inset-0 bg-slate-900/50" />
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Journey</p>
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="section-label">My Journey</span>
+          <h2 className="text-4xl md:text-5xl">
             Experience &amp; <span className="gradient-text">Education</span>
           </h2>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-cyan-500/20 to-transparent" />
+          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500/50 via-cyan-500/20 to-transparent" />
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             {items.sort((a, b) => a.display_order - b.display_order).map((item, i) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
-                className={`relative flex gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-row`}
+                className="relative flex gap-6 flex-row"
               >
                 {/* Year bubble */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-cyan-500 border-4 border-navy flex items-center justify-center z-10 flex-shrink-0">
+                <div className="absolute left-6 -translate-x-1/2 w-10 h-10 rounded-full bg-cyan-500 border-4 border-[#0A1628] flex items-center justify-center z-10 flex-shrink-0 shadow-[0_0_12px_rgba(6,182,212,0.4)]">
                   <span className="text-xs font-bold text-slate-900">
                     {new Date(item.start_date).getFullYear()}
                   </span>
                 </div>
 
                 {/* Card */}
-                <div className={`ml-20 md:ml-0 md:w-[calc(50%-2rem)] ${i % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
-                  <div className="glass rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-300 group">
+                <div className="ml-14 w-full">
+                  <div className="rounded-2xl p-6 lg:p-8 border border-slate-700/50 bg-slate-900/50 hover:border-cyan-500/30 transition-all duration-300 group">
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h3 className="text-xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
+                        <h3 className="text-lg font-bold text-white">
                           {item.organization}
                         </h3>
                         <p className="text-cyan-400 font-medium text-sm mt-0.5">{item.position}</p>

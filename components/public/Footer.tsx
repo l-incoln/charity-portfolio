@@ -15,9 +15,9 @@ const quickLinks = [
 
 export default function Footer({ profile }: FooterProps) {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
-      <div className="max-w-6xl mx-auto px-6 py-10 md:py-12">
-        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-8">
+    <footer className="bg-[#060D1A] border-t border-slate-800/80">
+      <div className="max-w-6xl mx-auto px-6 pt-10 pb-8 md:pt-12 md:pb-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800/60">
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold text-white mb-3">
@@ -83,12 +83,12 @@ export default function Footer({ profile }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6">
           <p className="text-slate-500 text-xs">
-            © {new Date().getFullYear()} Charity Agutu Martha. All rights reserved.
+            &copy; {new Date().getFullYear()} Charity Agutu Martha. All rights reserved.
           </p>
-          <p className="text-slate-500 text-xs flex items-center gap-1">
-            Built with <Heart size={12} className="text-cyan-400" /> using Next.js & Supabase
+          <p className="text-slate-500 text-xs flex items-center gap-1.5">
+            Built with <Heart size={11} className="text-cyan-500" /> using Next.js &amp; Supabase
           </p>
         </div>
       </div>

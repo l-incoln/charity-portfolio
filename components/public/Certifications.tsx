@@ -25,15 +25,15 @@ export default function Certifications({ certifications }: CertificationsProps) 
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Credentials</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
             <span className="gradient-text">Certifications</span>
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((cert, i) => (
             <motion.div
               key={cert.id}

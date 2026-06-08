@@ -87,20 +87,20 @@ export default function Hero({ profile }: HeroProps) {
       {/* Radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(6,182,212,0.08),transparent)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20 flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-24 flex flex-col items-center text-center">
         {/* Availability badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-medium text-cyan-400 mb-8 border border-cyan-500/20"
+          className="flex items-center gap-2 glass px-5 py-2.5 rounded-full text-xs font-medium text-cyan-400 mb-12 border border-cyan-500/20"
         >
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
           Available for opportunities
         </motion.div>
 
         {/* Main grid: floating pills + photo + pills */}
-        <div className="w-full flex items-center justify-between gap-8 mb-10">
+        <div className="w-full flex items-center justify-between gap-8 mb-14">
           {/* Left floating cards */}
           <div className="hidden lg:flex flex-col gap-3 items-end flex-1">
             {floatingLeft.map((item, i) => (
@@ -124,7 +124,7 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold leading-tight mb-4"
+                className="text-6xl md:text-8xl font-bold leading-tight mb-6"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
                 <span className="text-white">Charity</span>{' '}
@@ -137,7 +137,7 @@ export default function Hero({ profile }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="text-xl md:text-2xl text-slate-300 font-medium"
+                className="text-2xl md:text-3xl text-slate-300 font-medium mt-2"
               >
                 Data Scientist &amp;{' '}
                 <span className="text-cyan-400">Machine Learning Practitioner</span>
@@ -149,7 +149,7 @@ export default function Hero({ profile }: HeroProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative w-48 h-48 md:w-64 md:h-64"
+              className="relative w-56 h-56 md:w-72 md:h-72"
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 via-blue-600 to-cyan-300 opacity-30 blur-xl animate-pulse" />
               <div className="relative w-full h-full rounded-full border-2 border-cyan-500/40 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center glow">
@@ -191,7 +191,7 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="max-w-2xl text-slate-400 text-lg mb-10"
+          className="max-w-2xl text-slate-400 text-lg leading-relaxed mb-12"
         >
           {profile?.tagline || 'Transforming complex datasets into actionable insights through machine learning, predictive analytics, and business intelligence.'}
         </motion.p>
@@ -201,13 +201,13 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-wrap gap-4 justify-center"
+          className="flex flex-wrap gap-5 justify-center"
         >
           <a
             href={resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-7 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-105"
+            className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:scale-105"
           >
             <Download size={16} />
             Download CV
@@ -233,7 +233,7 @@ export default function Hero({ profile }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="flex gap-4 mt-8"
+          className="flex gap-5 mt-10"
         >
           {profile?.github_url && (
             <a href={profile.github_url} target="_blank" rel="noreferrer"

@@ -27,21 +27,21 @@ export default function About({ profile }: AboutProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Who I Am</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
             About <span className="gradient-text">Me</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">>
           {/* Left: Bio */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-8"
           >
             <p className="text-slate-300 text-lg leading-relaxed">
               {profile?.bio || 'I am a passionate Data Scientist and Machine Learning Practitioner with expertise in transforming raw data into strategic business value. Currently completing my Data Science Bootcamp at Moringa School, I specialize in predictive analytics, healthcare data, and business intelligence dashboards.'}
@@ -65,9 +65,9 @@ export default function About({ profile }: AboutProps) {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="glass rounded-2xl p-8 border border-cyan-500/15 space-y-5"
+            className="glass rounded-2xl p-10 border border-cyan-500/15 space-y-6"
           >
-            <h3 className="text-xl font-bold text-white mb-6" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h3 className="text-2xl font-bold text-white mb-8" style={{ fontFamily: 'Sora, sans-serif' }}>
               Quick Facts
             </h3>
 

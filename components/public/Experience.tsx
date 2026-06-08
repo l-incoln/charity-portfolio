@@ -46,10 +46,10 @@ export default function ExperienceSection({ experience }: ExperienceProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Journey</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
             Experience &amp; <span className="gradient-text">Education</span>
           </h2>
         </motion.div>

@@ -41,10 +41,10 @@ export default function Projects({ projects }: ProjectsProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">My Work</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
@@ -52,7 +52,7 @@ export default function Projects({ projects }: ProjectsProps) {
           </p>
         </motion.div>
 
-        <div className="space-y-10">
+        <div className="space-y-14">
           {featured.map((project, i) => (
             <motion.div
               key={project.id}
@@ -82,9 +82,9 @@ export default function Projects({ projects }: ProjectsProps) {
               </div>
 
               {/* Content */}
-              <div className="md:w-3/5 p-8 flex flex-col justify-between">
+              <div className="md:w-3/5 p-10 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <h3 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {project.title}
                   </h3>
                   <p className="text-slate-400 leading-relaxed mb-4">{project.description}</p>

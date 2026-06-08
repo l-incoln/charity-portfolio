@@ -56,10 +56,10 @@ export default function Contact({ profile }: ContactProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="text-cyan-400 text-sm uppercase tracking-widest font-semibold mb-3">Get In Touch</p>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-5xl md:text-6xl font-bold" style={{ fontFamily: 'Sora, sans-serif' }}>
             Let&apos;s Work <span className="gradient-text">Together</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-xl mx-auto">
@@ -67,13 +67,13 @@ export default function Contact({ profile }: ContactProps) {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-8"
           >
             {[
               { icon: Mail, label: 'Email', value: profile?.email || 'charityagutu@gmail.com', href: `mailto:${profile?.email}` },
@@ -114,7 +114,7 @@ export default function Contact({ profile }: ContactProps) {
                 <button onClick={() => setSent(false)} className="mt-6 text-cyan-400 text-sm hover:underline">Send another</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="glass rounded-2xl p-8 border border-slate-700/50 space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="glass rounded-2xl p-10 border border-slate-700/50 space-y-6">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs text-slate-400 uppercase tracking-wide mb-2">Name *</label>
